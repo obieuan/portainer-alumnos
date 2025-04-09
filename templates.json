@@ -1,13 +1,10 @@
 [
     {
-        "title": "MySQL + phpMyAdmin",
-        "description": "Base de datos MySQL con interfaz phpMyAdmin.",
-        "platform": "linux",
-        "logo": "https://www.phpmyadmin.net/static/images/logo-left-lg.svg",
-        "repository": {
-          "url": "https://github.com/TU_USUARIO/portainer-alumnos",
-          "stackfile": "stacks/mysql_phpmyadmin.yml"
-        }
+      "title": "MySQL + phpMyAdmin",
+      "description": "Base de datos MySQL con interfaz phpMyAdmin.",
+      "platform": "linux",
+      "logo": "https://www.phpmyadmin.net/static/images/logo-left-lg.svg",
+      "stackfile": "https://raw.githubusercontent.com/obieuan/portainer-alumnos/main/stacks/mysql_phpmyadmin.yml"
     }
-]
+  ]
   
