@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  lamp:
+    image: bitnami/lamp:latest
+    ports:
+      - "8084:8080"
+      - "8443:8443"
+    volumes:
+      - lamp_data:/app
+
+volumes:
+  lamp_data:

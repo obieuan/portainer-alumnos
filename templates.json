@@ -2,91 +2,297 @@
   "version": "2",
   "templates": [
     {
-      "type": 3,
-      "title": "MySQL + phpMyAdmin",
-      "description": "Base de datos MySQL con interfaz phpMyAdmin.",
-      "logo": "https://www.phpmyadmin.net/static/images/logo-left-lg.svg",
-      "note": "Accede a phpMyAdmin en el puerto 8080.",
+      "type": 1,
+      "title": "Entorno Python",
+      "description": "Entorno de desarrollo con Python 3.11.",
+      "platform": "linux",
+      "logo": "https://www.python.org/static/community_logos/python-logo.png",
+      "image": "python:3.11",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "desarrollo"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Entorno Node.js",
+      "description": "Entorno de desarrollo con Node.js.",
+      "platform": "linux",
+      "logo": "https://nodejs.org/static/images/logo.svg",
+      "image": "node:20",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "desarrollo"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Entorno Java",
+      "description": "Entorno con OpenJDK 17.",
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+      "image": "openjdk:17",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "desarrollo"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Entorno C/C++",
+      "description": "Compilador GCC para C/C++.",
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg",
+      "image": "gcc:latest",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "desarrollo"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Jupyter Notebook (Python)",
+      "description": "Entorno interactivo para an\u00e1lisis de datos.",
+      "platform": "linux",
+      "logo": "https://jupyter.org/assets/homepage/main-logo.svg",
+      "image": "jupyter/base-notebook",
+      "ports": [
+        "8888:8888/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "data-science",
+        "educaci\u00f3n"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "R + RStudio",
+      "description": "Entorno estad\u00edstico con R y RStudio.",
+      "platform": "linux",
+      "logo": "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Gray.png",
+      "image": "rocker/rstudio",
+      "ports": [
+        "8787:8787/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "data-science"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Code Server (VSCode Remoto)",
+      "description": "Editor de c\u00f3digo VSCode desde el navegador.",
+      "platform": "linux",
+      "logo": "https://code.visualstudio.com/assets/images/code-stable.png",
+      "image": "codercom/code-server",
+      "ports": [
+        "8801:8080/tcp"
+      ],
+      "env": [
+        {
+          "name": "PASSWORD",
+          "label": "Contrase\u00f1a de acceso",
+          "default": "vscode123"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "educaci\u00f3n",
+        "desarrollo"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Redis",
+      "description": "Contenedor de Redis para almacenamiento en memoria.",
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg",
+      "image": "redis:latest",
+      "ports": [
+        "6379:6379/tcp"
+      ],
+      "restart_policy": "unless-stopped",
       "categories": [
         "database"
-      ],
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Servidor NGINX",
+      "description": "Servidor web b\u00e1sico con NGINX.",
       "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg",
+      "image": "nginx:latest",
+      "ports": [
+        "8080:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "web"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Apache + PHP",
+      "description": "Servidor web con soporte PHP.",
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+      "image": "php:8.2-apache",
+      "ports": [
+        "8082:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "web"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Jenkins",
+      "description": "Servidor Jenkins para CI/CD.",
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg",
+      "image": "jenkins/jenkins:lts",
+      "ports": [
+        "8083:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "devops"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "GitLab Runner",
+      "description": "Runner de GitLab para pipelines personalizados.",
+      "platform": "linux",
+      "logo": "https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png",
+      "image": "gitlab/gitlab-runner:latest",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "devops"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Kali Linux (ligero)",
+      "description": "Contenedor base con herramientas de an\u00e1lisis de red.",
+      "platform": "linux",
+      "logo": "https://www.kali.org/images/kali-logo.svg",
+      "image": "kalilinux/kali-rolling",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "seguridad",
+        "redes"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Wireshark Remote (Netshoot)",
+      "description": "Herramientas de inspecci\u00f3n de red y diagn\u00f3stico.",
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Wireshark_icon.svg",
+      "image": "nicolaka/netshoot",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "seguridad",
+        "redes"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "HTML/CSS Playground",
+      "description": "Servidor NGINX para probar proyectos web est\u00e1ticos.",
+      "platform": "linux",
+      "logo": "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+      "image": "nginx:alpine",
+      "ports": [
+        "8084:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "educaci\u00f3n",
+        "web"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Scratch 3 Server",
+      "description": "Servidor experimental para proyectos Scratch.",
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Scratch_Logo.svg/768px-Scratch_Logo.svg.png",
+      "image": "llk/scratch-gui",
+      "restart_policy": "unless-stopped",
+      "categories": [
+        "educaci\u00f3n"
+      ]
+    },
+    {
+      "type": 3,
+      "title": "MySQL + phpMyAdmin",
+      "description": "Stack con MySQL y cliente web phpMyAdmin.",
+      "platform": "linux",
+      "logo": "https://www.phpmyadmin.net/static/images/logo-left-lg.svg",
+      "categories": ["database"],
       "repository": {
         "url": "https://github.com/obieuan/portainer-alumnos",
         "stackfile": "stacks/mysql_phpmyadmin.yml",
         "reference": "refs/heads/main"
-      },
-      "restart_policy": "always"
+      }
     },
     {
       "type": 3,
       "title": "PostgreSQL + Adminer",
-      "description": "Base de datos PostgreSQL con Adminer como cliente web.",
-      "logo": "https://www.postgresql.org/media/img/about/press/elephant.png",
-      "note": "Adminer disponible en el puerto 8081.",
-      "categories": [
-        "database"
-      ],
+      "description": "Stack con PostgreSQL y Adminer como cliente web.",
       "platform": "linux",
+      "logo": "https://www.postgresql.org/media/img/about/press/elephant.png",
+      "categories": ["database"],
       "repository": {
         "url": "https://github.com/obieuan/portainer-alumnos",
         "stackfile": "stacks/postgresql_adminer.yml",
         "reference": "refs/heads/main"
-      },
-      "restart_policy": "always"
+      }
     },
     {
       "type": 3,
       "title": "MongoDB + Mongo Express",
-      "description": "Base de datos MongoDB con interfaz web Mongo Express.",
-      "logo": "https://www.mongodb.com/assets/images/global/leaf.png",
-      "note": "Accede a Mongo Express en el puerto 8082.",
-      "categories": [
-        "database"
-      ],
+      "description": "Stack con MongoDB y Mongo Express como interfaz.",
       "platform": "linux",
+      "logo": "https://www.mongodb.com/assets/images/global/leaf.png",
+      "categories": ["database"],
       "repository": {
         "url": "https://github.com/obieuan/portainer-alumnos",
         "stackfile": "stacks/mongodb_express.yml",
         "reference": "refs/heads/main"
-      },
-      "restart_policy": "always"
+      }
     },
     {
       "type": 3,
-      "title": "Jupyter Notebook (Python)",
-      "description": "Notebook interactivo para ciencia de datos con Python.",
-      "logo": "https://jupyter.org/assets/homepage/main-logo.svg",
-      "note": "Disponible en el puerto 8888.",
-      "categories": [
-        "data-science",
-        "education"
-      ],
+      "title": "MEVN Stack",
+      "description": "Fullstack JavaScript: Node, Mongo y Vue.",
       "platform": "linux",
+      "logo": "https://vuejs.org/images/logo.png",
+      "categories": ["web"],
       "repository": {
         "url": "https://github.com/obieuan/portainer-alumnos",
-        "stackfile": "stacks/jupyter.yml",
+        "stackfile": "stacks/mevn_stack.yml",
         "reference": "refs/heads/main"
-      },
-      "restart_policy": "always"
+      }
     },
     {
       "type": 3,
-      "title": "VSCode Remoto (Code Server)",
-      "description": "Entorno de desarrollo con VSCode accesible desde el navegador.",
-      "logo": "https://code.visualstudio.com/assets/images/code-stable.png",
-      "note": "Disponible en el puerto 8880.",
-      "categories": [
-        "development",
-        "tools"
-      ],
+      "title": "LAMP Stack",
+      "description": "Stack clásico con Linux, Apache, MySQL y PHP.",
       "platform": "linux",
+      "logo": "https://bitnami.com/assets/stacks/lamp/img/lamp-stack-220x234.png",
+      "categories": ["web"],
       "repository": {
         "url": "https://github.com/obieuan/portainer-alumnos",
-        "stackfile": "stacks/code_server.yml",
+        "stackfile": "stacks/lamp_stack.yml",
         "reference": "refs/heads/main"
-      },
-      "restart_policy": "always"
+      }
     }
   ]
 }
