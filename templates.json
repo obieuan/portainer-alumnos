@@ -1,10 +1,92 @@
-[
+{
+  "version": "2",
+  "templates": [
     {
+      "type": 3,
       "title": "MySQL + phpMyAdmin",
       "description": "Base de datos MySQL con interfaz phpMyAdmin.",
-      "platform": "linux",
       "logo": "https://www.phpmyadmin.net/static/images/logo-left-lg.svg",
-      "stackfile": "https://raw.githubusercontent.com/obieuan/portainer-alumnos/main/stacks/mysql_phpmyadmin.yml"
+      "note": "Accede a phpMyAdmin en el puerto 8080.",
+      "categories": [
+        "database"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/obieuan/portainer-alumnos",
+        "stackfile": "stacks/mysql_phpmyadmin.yml",
+        "reference": "refs/heads/main"
+      },
+      "restart_policy": "always"
+    },
+    {
+      "type": 3,
+      "title": "PostgreSQL + Adminer",
+      "description": "Base de datos PostgreSQL con Adminer como cliente web.",
+      "logo": "https://www.postgresql.org/media/img/about/press/elephant.png",
+      "note": "Adminer disponible en el puerto 8081.",
+      "categories": [
+        "database"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/obieuan/portainer-alumnos",
+        "stackfile": "stacks/postgresql_adminer.yml",
+        "reference": "refs/heads/main"
+      },
+      "restart_policy": "always"
+    },
+    {
+      "type": 3,
+      "title": "MongoDB + Mongo Express",
+      "description": "Base de datos MongoDB con interfaz web Mongo Express.",
+      "logo": "https://www.mongodb.com/assets/images/global/leaf.png",
+      "note": "Accede a Mongo Express en el puerto 8082.",
+      "categories": [
+        "database"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/obieuan/portainer-alumnos",
+        "stackfile": "stacks/mongodb_express.yml",
+        "reference": "refs/heads/main"
+      },
+      "restart_policy": "always"
+    },
+    {
+      "type": 3,
+      "title": "Jupyter Notebook (Python)",
+      "description": "Notebook interactivo para ciencia de datos con Python.",
+      "logo": "https://jupyter.org/assets/homepage/main-logo.svg",
+      "note": "Disponible en el puerto 8888.",
+      "categories": [
+        "data-science",
+        "education"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/obieuan/portainer-alumnos",
+        "stackfile": "stacks/jupyter.yml",
+        "reference": "refs/heads/main"
+      },
+      "restart_policy": "always"
+    },
+    {
+      "type": 3,
+      "title": "VSCode Remoto (Code Server)",
+      "description": "Entorno de desarrollo con VSCode accesible desde el navegador.",
+      "logo": "https://code.visualstudio.com/assets/images/code-stable.png",
+      "note": "Disponible en el puerto 8880.",
+      "categories": [
+        "development",
+        "tools"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/obieuan/portainer-alumnos",
+        "stackfile": "stacks/code_server.yml",
+        "reference": "refs/heads/main"
+      },
+      "restart_policy": "always"
     }
   ]
-  
+}
