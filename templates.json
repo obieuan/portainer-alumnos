@@ -1,0 +1,30 @@
+[
+    {
+      "title": "Entorno Python 3.11",
+      "description": "Contenedor con Python para desarrollo.",
+      "platform": "linux",
+      "logo": "https://www.python.org/static/community_logos/python-logo.png",
+      "image": "python:3.11",
+      "ports": [],
+      "volumes": [
+        {
+          "container": "/usr/src/app",
+          "bind": "/home/python-alumno",
+          "readonly": false
+        }
+      ],
+      "env": [],
+      "restart_policy": "always"
+    },
+    {
+        "title": "MySQL + phpMyAdmin",
+        "description": "Base de datos MySQL con interfaz phpMyAdmin.",
+        "platform": "linux",
+        "logo": "https://www.phpmyadmin.net/static/images/logo-left-lg.svg",
+        "repository": {
+          "url": "https://github.com/TU_USUARIO/portainer-alumnos",
+          "stackfile": "stacks/mysql_phpmyadmin.yml"
+        }
+      }
+  ]
+  
